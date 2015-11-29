@@ -23,8 +23,13 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('jade', function() {
-  gulp.src('src/**/*.jade')
-    .pipe(jade({}))
+  gulp.src('src/*.jade')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(jade())
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream:true}))
 });

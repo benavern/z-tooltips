@@ -8,3 +8,16 @@ html
 
 body
   font-family: sans-serif
+
+.z-tooltip-container
+  position: absolute
+  padding: 10px
+  background: #000
+  color: white
+  //display: none
+  opacity: 0
+  transition: opacity 1s
+
+  &.visible
+    //display: block
+    opacity: 1

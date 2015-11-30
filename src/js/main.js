@@ -9,6 +9,7 @@
       this.el = el;
       this.text = this.el.dataset.ztooltips || "ZTooltips by ZeZeN.";
       this.tooltip = null;
+      this.timer = null;
       __createTooltips.call(this);
     }
   };
@@ -38,12 +39,14 @@
 
   // fade in
   function __fadeIn(el, display){
+    var _this = this;
+    clearTimeout(this.timer);
     el.style.display = display || "block";
     el.style.opacity = 0;
     var setOpacity = function (){
-      el.style.opacity = parseFloat(el.style.opacity) + 0.1;
+      el.style.opacity = parseFloat(el.style.opacity) + 0.05;
       if(el.style.opacity < 1 || el.style.opacity < 1.0){
-        setTimeout(setOpacity, 100);
+        _this.timer = setTimeout(setOpacity, 20);
       }
     };
     setOpacity();
@@ -51,10 +54,12 @@
 
   // fade out
   function __fadeOut(el){
+    var _this = this;
+    clearTimeout(this.timer);
     var setOpacity = function (){
-      el.style.opacity = parseFloat(el.style.opacity) - 0.1;
+      el.style.opacity = parseFloat(el.style.opacity) - 0.05;
       if(el.style.opacity > 0 || el.style.opacity >0.0){
-        setTimeout(setOpacity, 100);
+        _this.timer = setTimeout(setOpacity, 20);
       }
       else{
         el.style.display = "none";
@@ -73,7 +78,7 @@
       y : event.pageY
     };
     this.tooltip.style.left = position.x + "px";
-    this.tooltip.style.top  = position.y - + "px";
+    this.tooltip.style.top  = position.y + "px";
 
     __fadeIn.call(this, this.tooltip);
   };

@@ -9,15 +9,30 @@ html
 body
   font-family: sans-serif
 
-.z-tooltip-container
-  position: absolute
-  padding: 10px
-  background: #000
-  color: white
-  //display: none
-  opacity: 0
-  // transition: opacity 1s
+[data-ztooltips]
+  position: relative
+  overflow: visible
 
-  // &.visible
-    //display: block
-    opacity: 1
+  &:hover
+
+    &:before
+      content: attr(data-ztooltips)
+      padding: .4em .8em
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%, -150%)
+      border-radius: 4px
+      background: #aaa
+      color: #FFF
+      display: inline-block
+
+    &:after
+      content: ""
+      display: block
+      border: 10px solid transparent
+      border-top-color: #aaa
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%, -100%)

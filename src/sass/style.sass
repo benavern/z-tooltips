@@ -1,38 +1,6 @@
-*, *:before, *:after
-  margin: 0
-  padding: 0
-  box-sizing: border-box
+// z-tooltip demo
+@import 'reset'
 
-html
-  font-size: 18px
+@import 'z-tooltips'
 
-body
-  font-family: sans-serif
-
-[data-ztooltips]
-  position: relative
-  overflow: visible
-
-  &:hover
-
-    &:before
-      content: attr(data-ztooltips)
-      padding: .4em .8em
-      position: absolute
-      top: 0
-      left: 50%
-      transform: translate(-50%, -150%)
-      border-radius: 4px
-      background: #aaa
-      color: #FFF
-      display: inline-block
-
-    &:after
-      content: ""
-      display: block
-      border: 10px solid transparent
-      border-top-color: #aaa
-      position: absolute
-      top: 0
-      left: 50%
-      transform: translate(-50%, -100%)
+@import 'page'

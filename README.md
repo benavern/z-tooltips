@@ -1,8 +1,8 @@
 # z-tooltips
 
-A tooltips js builder entirely made in vanilla js
+Create tooltips just by adding attributes and classes on an element
 
 ## Work in progress...
 
 ## License
-MIT
+[MIT](http://benavern.github.io/MIT#name=Benjamin%20Caradeuc&link=http://caradeuc.info)

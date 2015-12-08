@@ -1,0 +1,121 @@
+/**
+  * Z-Tooltips sass plugin
+  * made with love by
+  * Benjamin Caradeuc
+  * http://caradeuc.info/
+
+
+
+// z-tooltips background color :
+$zTooltipsBg : #666
+
+// z-tooltips text color :
+$zTooltipText: #fff
+
+// z-tooltips arrow width :
+$zTooltipArrow: 8px
+
+
+[data-ztooltips]
+  position: relative
+  overflow: visible
+  box-sizing: border-box
+
+  &:before, &:after
+    opacity: 0
+    pointer-events: none
+    transition:
+      property: opacity
+      duration: .3s
+
+  &:before
+    content: attr(data-ztooltips)
+    display: inline-block
+    padding: .5em 1em
+    background: $zTooltipsBg
+    color: $zTooltipText
+    position: absolute
+    opacity: 0
+    border-radius: 4px
+    min-width: 200px
+    max-width: 500px
+    text-align: center
+
+  &:after
+    content: ""
+    display: block
+    border: $zTooltipArrow solid transparent
+    position: absolute
+    width: 0
+    height: 0
+    opacity: 0
+
+  &:hover:before, &:hover:after
+    opacity: 1
+
+
+  &.z-tooltips-top
+
+    &:before
+      bottom: 100%
+      left: 50%
+      transform: translateX(-50%)
+      margin-bottom: $zTooltipArrow
+
+    &:after
+      bottom: 100%
+      left: 50%
+      transform: translateX(-50%)
+      border-top-color: $zTooltipsBg
+      margin-bottom: -$zTooltipArrow
+
+    &:hover
+      &:before
+        margin-bottom: $zTooltipArrow
+      &:after
+        margin-bottom: -$zTooltipArrow
+
+  &.z-tooltips-bottom
+
+    &:before
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+      margin-top: $zTooltipArrow
+
+    &:after
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+      border-bottom-color: $zTooltipsBg
+      margin-top: -$zTooltipArrow
+
+  &.z-tooltips-left
+
+    &:before
+      right: 100%
+      top: 50%
+      transform: translateY(-50%)
+      margin-right: $zTooltipArrow
+
+    &:after
+      right: 100%
+      top: 50%
+      transform: translateY(-50%)
+      border-left-color: $zTooltipsBg
+      margin-right: -$zTooltipArrow
+
+  &.z-tooltips-right
+
+    &:before
+      left: 100%
+      top: 50%
+      transform: translateY(-50%)
+      margin-left: $zTooltipArrow
+
+    &:after
+      left: 100%
+      top: 50%
+      transform: translateY(-50%)
+      border-right-color: $zTooltipsBg
+      margin-left: -$zTooltipArrow

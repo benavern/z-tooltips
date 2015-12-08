@@ -4,15 +4,17 @@ html(lang="en")
     meta(charset="UTF-8")
     title Z-TOOLTIPS
     meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
-    link(rel="stylesheet", href="css/style.min.css")
+    link(rel="stylesheet", href="css/style.css")
   body
-  
-    h1 Z-tooltips ! 
+    header
+      .wrapper
+        h1 Z-tooltips ! 
     
-    hr
+    section
+      .wrapper
+        include jade/_description
     
-    
-    include jade/_ex1
-    include jade/_ex2
-    
-    // script(src="js/main.min.js")
+    section
+      .wrapper
+        .exemples
+          include jade/_ex1

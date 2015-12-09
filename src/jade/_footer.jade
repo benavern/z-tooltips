@@ -3,18 +3,21 @@
     .box.center
       p 
         | Made with 
-        span.pink.entypo-heart
+        span(data-ztooltips="LOVE").big 
+          span.pink.entypo-heart 
         | by 
         a(href="http://caradeuc.info") Benjamin Caradeuc
       
       p
-        a(href="mailto:benjamin@caradeuc.info").btn
+        a(href="mailto:benjamin@caradeuc.info", data-ztooltips="benjamin@caradeuc.info").btn
           span.entypo-mail 
           | contact me
           
     
   .grid-2
     .box.center
-      p Share my work on 
-      a(title="Share via facebook", href="http://www.facebook.com/sharer.php?u=http://labo.caradeuc.info/z-tooltips/").social-btn.facebook.entypo-facebook
-      a(title="Share via twitter", href="https://twitter.com/share?url=http://labo.caradeuc.info/z-tooltips/&text=Just%20found%20something%20awesome!&via=benavern").social-btn.twitter.entypo-twitter
+      p Share my work !
+      a(data-ztooltips="Share via facebook", href="http://www.facebook.com/sharer.php?u=http://labo.caradeuc.info/z-tooltips/").social-btn.facebook
+        span.entypo-facebook
+      a(data-ztooltips="Share via twitter", href="https://twitter.com/share?url=http://labo.caradeuc.info/z-tooltips/&text=Just%20found%20something%20awesome!&via=benavern").social-btn.twitter
+        span.entypo-twitter

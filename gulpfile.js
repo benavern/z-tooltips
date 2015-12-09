@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var jade = require('gulp-jade');
+var gulp         = require('gulp');
+var plumber      = require('gulp-plumber');
+var jade         = require('gulp-jade');
 var autoprefixer = require('gulp-autoprefixer');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
+var sass         = require('gulp-sass');
+var browserSync  = require('browser-sync');
+var rename       = require('gulp-rename');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -46,10 +47,28 @@ gulp.task('styles', function(){
     .pipe(browserSync.reload({stream:true}))
 });
 
+gulp.task('download', function() {
+  gulp.src(['src/sass/_z-tooltips.sass'])
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(rename("z-toltips.sass"))
+    .pipe(gulp.dest('dist/download'))
+    .pipe(sass({
+      indentedSyntax: true,
+      outputStyle: "compressed"
+    }))
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest('dist/download'))
+});
 
-gulp.task('build', ['styles', 'jade']);
+
+gulp.task('build', ['styles', 'jade', 'download']);
 
 gulp.task('default', ['browser-sync'], function(){
   gulp.watch("src/sass/**/*.sass", ['styles']);
+  gulp.watch("src/sass/_z-tooltips.sass", ['download']);
   gulp.watch("src/**/*.jade", ['jade']);
 });

@@ -5,6 +5,8 @@ html(lang="en")
     title Z-TOOLTIPS
     meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
     link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/monokai-sublime.min.css")
+    
   body
     header
       a(href="http://labo.caradeuc.info/").back &lt; labo
@@ -18,9 +20,19 @@ html(lang="en")
     
     section
       .wrapper
+        include jade/_howto
+    
+    section
+      .wrapper
         include jade/_ex1
+    
+    section
+      .wrapper
+        include jade/_more
     
     footer
       .wrapper
         include jade/_footer
-        
+    
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js")
+    script hljs.initHighlightingOnLoad();

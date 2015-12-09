@@ -14,11 +14,14 @@
 
   .grid
     .grid-2.center
-      a(href="#").btn 
-        span.entypo-github 
-        | github
+      .box
+        a(href="http://github.com/benavern/z-tooltips", data-ztooltips="View this project on Github").btn.z-tooltips-top 
+          span.entypo-github 
+          | github
       
     .grid-2.center
-      a(href="#").btn 
-        span.entypo-download 
-        | download
+      .box
+        a(href="download", data-ztooltips="Download the sass or css files").btn 
+          span.entypo-download 
+          | download
+  

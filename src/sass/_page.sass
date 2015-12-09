@@ -1,8 +1,13 @@
+@media(max-width: 960px)
+  html
+    font-size: 15px
+
 body
   background: #f2f2f2
   color: #444
   line-height: 2
   font-family: 'Raleway', sans-serif
+
 
 .wrapper
   max-width: 960px
@@ -12,8 +17,11 @@ header
   background-color: #4FA076
   background-image: url("http://www.transparenttextures.com/patterns/cubes.png")
   color: white
-  padding: 150px 0 250px
+  padding: 150px 0 200px
   margin-bottom: -100px
+  @media(max-width: 960px)
+    margin-bottom: auto
+    padding: 100px 0
 
   .back
     position: absolute
@@ -43,17 +51,24 @@ header
     margin: 0
     @media(max-width: 960px)
       font-size: 3rem
-      margin-left: 2rem
+      margin: 1rem
 
 section
   background: transparent
   margin-bottom: 60px
+  @media(max-width: 960px)
+    margin-bottom: 0
 
   .wrapper
     background: white
     padding: 2em 2.5em
     box-shadow: 0 0 20px rgba(black, 0.3)
     border-radius: 4px
+
+    @media(max-width: 960px)
+      padding: 1em
+      box-shadow: none
+      border-radius: 0
 
     .example
       width: 50%
@@ -78,6 +93,12 @@ section
       margin: 1rem
       display: block
 
+    @media(max-width: 960px)
+      &[class*="grid-"]
+        width: 100%
+        display: block
+        margin: .5rem 0
+
 /* entypo */
 [class*="entypo-"]:before
   font-family: 'entypo', sans-serif
@@ -90,7 +111,14 @@ section
   margin-right: .3em
   border-radius: 4px
 
-.btn
+a
+  color: inherit
+  text-decoration: none
+  font-weight: bold
+  &:hover
+    text-decoration: underline
+
+a.btn, button.btn
   display: inline-block
   padding: .4em 1em
   border: 1px solid #444
@@ -99,13 +127,55 @@ section
   text-decoration: none
   font-variant: small-caps
   font-weight: bold
-
   transition:
     property: color, background
     duration: .3s
   &:hover
     background: #444
     color: white
+    text-decoration: none
 
 .center
   text-align: center
+
+.pink
+  color: pink
+
+footer
+  background: #444
+  padding: 100px 0
+  color: white
+
+  a.btn, button.btn
+    color: white
+    border-color: white
+    &:hover
+      color: #444
+      background: white
+
+  @media(max-width: 960px)
+    padding: 60px 0
+
+.social-btn
+  display: inline-block
+  border-radius: 50%
+  height: 60px
+  width: 60px
+  line-height: 60px
+  margin: 0 .5rem
+  position: relative
+  font-weight: normal
+
+  &:before
+    margin: 0
+
+  &:hover
+    text-decoration: none
+    bottom: 5px
+    box-shadow: 0 3px 10px black
+
+  &.facebook
+    background: #3B5998
+
+  &.twitter
+    background: #00ACED

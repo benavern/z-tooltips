@@ -19,6 +19,8 @@ header
   color: white
   padding: 150px 0 200px
   margin-bottom: -100px
+  text-align: center
+
   @media(max-width: 960px)
     margin-bottom: auto
     padding: 100px 0
@@ -48,10 +50,29 @@ header
     font-size: 5rem
     font-variant: small-caps
     font-weight: 100
-    margin: 0
+    background: #444
+    display: inline-block
+    padding: 0 3rem
+    border-radius: 8px
+    position: relative
+    box-shadow: 0 0 15px rgba(black, .3)
+
+    &:after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      border: 16px solid transparent
+      border-top-color: #444
+      position: absolute
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+
     @media(max-width: 960px)
       font-size: 3rem
-      margin: 1rem
+      &:after
+        border-width: 12px
 
 section
   background: transparent

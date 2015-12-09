@@ -1,8 +1,10 @@
-# z-tooltips
+# Z-Tooltips
 
 Create tooltips just by adding attributes and classes on an element
 
-## Work in progress...
+![Screenshot](/screenshot.jpg "Screenshot")
+
+### [Documentation](http://labo.caradeuc.info/z-tooltips)
 
 ## License
 [MIT](http://benavern.github.io/MIT#name=Benjamin%20Caradeuc&link=http://caradeuc.info)

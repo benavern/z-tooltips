@@ -1,12 +1,10 @@
-*, *:before, *:after
+*, *:before, *::after
   margin: 0
   padding: 0
   box-sizing: border-box
 
 html
   font-size: 18px
-  height: 100%
-  overflow-x: hidden
 
 html *
 	text-rendering: optimizeLegibility
@@ -16,12 +14,30 @@ html *
 body
   font-size: 1rem
   font-family: sans-serif
-  height: 100%
+
+h1, h2, h3, h4, h5, h6, p
+  margin: 0.2em 0 0.6em 
+
+h1, h2, h3, h4
+  font-weight: bold
+h5, h6
+  font-weight: normal
+h1
+  font-size: 2.5rem
+h2
+  font-size: 2rem
+h3
+  font-size: 1.6rem
+h4, h5
+  font-size: 1.3rem
+h6
+ font-size: 1.2rem
+
 
 ul, ol
-  display: block
+  display:block
   margin: 0.8em
 
   li
-    display: list-item
+    display:list-item
     margin: 0.5rem 0 0.5rem 1.5rem

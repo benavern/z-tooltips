@@ -9,7 +9,7 @@ var rename       = require('gulp-rename');
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-       baseDir: "./dist"
+       baseDir: "./docs"
     }
   });
 });
@@ -26,7 +26,7 @@ gulp.task('jade', function() {
         this.emit('end');
     }}))
     .pipe(jade())
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('docs/'))
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -43,7 +43,7 @@ gulp.task('styles', function(){
       outputStyle: "compressed"
     }))
     .pipe(autoprefixer('last 2 versions'))
-    .pipe(gulp.dest('dist/css/'))
+    .pipe(gulp.dest('docs/css/'))
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -55,13 +55,13 @@ gulp.task('download', function() {
         this.emit('end');
     }}))
     .pipe(rename("z-toltips.sass"))
-    .pipe(gulp.dest('dist/download'))
+    .pipe(gulp.dest('docs/download'))
     .pipe(sass({
       indentedSyntax: true,
       outputStyle: "compressed"
     }))
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest('dist/download'))
+    .pipe(gulp.dest('docs/download'))
 });
 
 

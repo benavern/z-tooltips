@@ -9,7 +9,7 @@ Create tooltips just by adding attributes and classes on an element
 ### dev
 
 ```bash
-npm run serve
+npm run dev
 ```
 
 ## License

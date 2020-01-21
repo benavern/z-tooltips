@@ -2,7 +2,7 @@
   "name": "z-tooltips",
   "version": "1.0.0",
   "description": "z tooltip thing",
-  "main": "index.html",
+  "main": "lib/_z-tooltips.css",
   "scripts": {
     "dev": "parcel src/index.pug",
     "build": "npm run build:docs && npm run build:lib",

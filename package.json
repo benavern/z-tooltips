@@ -4,9 +4,10 @@
   "description": "z tooltip thing",
   "main": "index.html",
   "scripts": {
-    "build": "gulp build",
-    "preserve": "npm run build",
-    "serve": "gulp"
+    "dev": "parcel src/index.pug",
+    "build": "npm run build:docs && npm run build:lib",
+    "build:docs": "parcel build src/index.pug --out-dir docs",
+    "build:lib": "parcel build src/sass/_z-tooltips.sass --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -23,12 +24,8 @@
   },
   "homepage": "https://github.com/benavern/z-tooltips#readme",
   "devDependencies": {
-    "browser-sync": "^2.10.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1"
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4",
+    "sass": "^1.25.0"
   }
 }
